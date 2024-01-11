@@ -1,2 +1,2 @@
 # Multi-Client-Rental-App
-Built a basic Java file server that communicate to clients using JSON requests
+I built a basic Java file server that communicate to clients using JSON requests
