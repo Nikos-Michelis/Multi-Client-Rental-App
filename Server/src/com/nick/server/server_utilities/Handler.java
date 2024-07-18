@@ -46,7 +46,6 @@ public class Handler implements Runnable {
         String jsonMember;
         Request clientRequest;
         Response response = new Response();
-        // Create a Gson instance with custom deserializer
       Gson gson = new Gson();
          try {
              List<Map<String, Object>> registersList = null;
@@ -195,7 +194,6 @@ public class Handler implements Runnable {
                             ChooseProduct chooseProduct = new ChooseProduct();
                             String jsonClientDataRequest = reader.readLine();
                             System.out.println("Json Request: " + jsonClientDataRequest);
-                            // Parse the JSON array into a list of maps
                             Type listType = new TypeToken<List<Map<String, Object>>>() {}.getType();
                             List<Map<String, Object>> carList = gson.fromJson(jsonClientDataRequest, listType);
 
@@ -303,7 +301,6 @@ public class Handler implements Runnable {
              } else {
                  response.setStatus(false);
                  response.setMessage("User already exists!");
-                 // Send JSON response to client
                  sendJsonResponseToClient(writer, response);
              }
          } catch (IOException | JsonSyntaxException e) {
